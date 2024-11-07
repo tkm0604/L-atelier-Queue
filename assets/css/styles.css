@@ -92,7 +92,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-family: "Noto Sans JP", serif;
 }
 
 body {
@@ -127,7 +127,7 @@ img {
 .contact-btn__link {
   background: #F2BC09;
   border-radius: 100px;
-  color: #000;
+  color: #A88E25;
   padding: 12px 0;
   display: block;
   width: 150px;
@@ -139,7 +139,7 @@ img {
   transition: all 0.3s ease-in;
 }
 .contact-btn__link:hover {
-  background: #106BB8;
+  background: #341E12;
   color: #fff;
   opacity: 1;
 }
@@ -150,11 +150,11 @@ img {
 .gotop {
   right: 0px;
   position: fixed;
-  bottom: 0px;
   width: 80px;
   height: 80px;
-  background: #106BB8;
+  background: #341E12;
   z-index: 99999;
+  border-radius: 50%;
 }
 @media screen and (max-width: 767px) {
   .gotop {
@@ -166,17 +166,16 @@ img {
 .gotop a {
   width: 100%;
   height: 100%;
-  position: relative;
-  background: #007BFF;
-  /* 例として青色を使用 */
+  background: #341E12;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.3s all ease-in;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  padding-top: 20px;
+  border-radius: 50%;
 }
 @media screen and (max-width: 767px) {
   .gotop a {
@@ -251,7 +250,7 @@ main {
 .section-ttl span::before {
   content: "";
   position: absolute;
-  background-color: #106BB8;
+  background-color: #341E12;
   border-radius: 50%;
   width: 8px;
   height: 8px;
@@ -273,7 +272,7 @@ main {
   }
 }
 .page-ttl span {
-  color: #87B4DB;
+  color: #F5EFD7;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -297,7 +296,7 @@ main {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  background: #106BB8;
+  background: #341E12;
 }
 @media screen and (max-width: 767px) {
   .page-ttl span:after {
@@ -335,7 +334,7 @@ main {
 .pageGuide .breadcrumbs .separator::before {
   position: absolute;
   content: "";
-  background-color: #106BB8;
+  background-color: #341E12;
   width: 10px;
   height: 1px;
   top: 50%;
@@ -343,7 +342,7 @@ main {
   transform: translate(-50%);
 }
 .pageGuide .breadcrumbs .active {
-  color: #87B4DB;
+  color: #F5EFD7;
 }
 
 /*------------------------------------------
@@ -431,7 +430,7 @@ main {
   }
 }
 .news-list__item a span {
-  color: #87B4DB;
+  color: #F5EFD7;
   font-size: 1.3rem;
   font-weight: 600;
   display: block;
@@ -461,7 +460,7 @@ main {
   }
 }
 .news-list__item a:hover {
-  color: #106BB8;
+  color: #341E12;
 }
 .news-list__item a:hover::before {
   right: 25px;
@@ -694,4 +693,105 @@ button:focus {
 
 address {
   font-style: normal;
+}
+
+.header-top {
+  max-width: 1080px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.header-top__left {
+  width: 424px;
+}
+.header-top__right {
+  max-width: 624px;
+  width: 100%;
+  border-top: 1px solid #341E12;
+  border-bottom: 1px solid #341E12;
+  padding: 43px 0;
+}
+.header-top__right p {
+  font-family: "Noto Sans JP", serif;
+  color: #341E12;
+  font-size: 2rem;
+  line-height: 1.8;
+}
+
+.header-img {
+  width: 100%;
+  height: 200px;
+  background-image: url("/assets/img/common/bg_top_header.jpg");
+  background-repeat: repeat-x; /* 水平方向に繰り返し */
+  background-position: 0 0;
+  background-size: auto 100%;
+  overflow: hidden;
+  animation: slide-background 20s linear infinite;
+}
+
+@keyframes slide-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.g-nav {
+  background: #F5EFD7;
+}
+.g-nav__list {
+  max-width: 930px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 28px 0 24px;
+}
+.g-nav__link {
+  display: flex;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #341E12;
+}
+.g-nav__link:hover {
+  opacity: 0.8;
+}
+
+footer {
+  background-color: #341E12;
+}
+footer .footer-inner {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+footer .footer-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19px;
+}
+footer .footer-nav__link {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2.08;
+}
+footer .privacy {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+footer .privacy__link {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2.08;
+}
+footer .copy-rights {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 2.08;
+  margin-top: 60px;
 }

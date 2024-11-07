@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'atelier Queue</title>
+    <title>L'atelier Queue(アトリエクー)</title>
+    <!-- stylesheet-->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- jquery -->
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <header>
+        <div class="header-top">
+            <h1 class="header-top__left">
+                <a href="">
+                    <img src="/assets/img/common/logo_top_header.svg" alt="L'atelier Queue(アトリエクー)">
+                </a>
+            </h1>
+            <div class="header-top__right">
+                <p>“Queue(クー)”は、フランス語で「しっぽ」の意味です。<br>
+                    猫にも人にも心地好いをモットーに、猫おもちゃ、雑貨<br>
+                    を作っています。</p>
+            </div>
+        </div>
+        <div class="header-img">
+            <!-- <img src="/assets/img/common/bg_top_header.jpg" alt=""> -->
+        </div>
+        <nav class="g-nav">
+            <ul class="g-nav__list">
+                <li class="g-nav__item">
+                    <a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        商品一覧
+                    </a>
+                </li>
+                <li class="g-nav__item">
+                    <a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        ねこブログ
+                    </a>
+                </li>
+                <li class="g-nav__item"><a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        ねこ店員紹介
+                    </a>
+                </li>
+                <li class="g-nav__item"><a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        よくあるご質問
+                    </a>
+                </li>
+                <li class="g-nav__item"><a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        お問い合わせ
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="gotop show" id="goTop">
+            <a href="#">
+                <img src="assets/img/common/btn-nikukyu.svg" alt="">
+                PAGE TOP
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <img src="assets/img/common/footer-logo.svg" alt="">
+            <ul class="footer-nav">
+                <li class="footer-nav__list">
+                    <a href="" class="footer-nav__link">
+                        トップページ
+                    </a>
+                </li>
+                <li class="footer-nav__list">
+                    <a href="" class="footer-nav__link">
+                        商品一覧
+                    </a>
+                </li>
+                <li class="footer-nav__list">
+                    <a href="" class="footer-nav__link">
+                        ねこブログ
+                    </a>
+                </li>
+                <li class="footer-nav__list">
+                    <a href="" class="footer-nav__link">
+                        お問い合わせ
+                    </a>
+                </li>
+            </ul>
+            <ul class="privacy">
+                <li class="privacy__list"><a href="" class="privacy__link">特定商取引法に関する表記</a></li>
+                <li class="privacy__list"><a href="" class="privacy__link">プライバシーポリシー</a></li>
+            </ul>
+            <p class="copy-rights">© l’atelier Queue All Rights Reserved. 2021</p>
+        </div>
+    </footer>
 </body>
+
 </html>
