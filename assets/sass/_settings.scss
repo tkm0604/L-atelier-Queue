@@ -1,0 +1,288 @@
+// color ssettings
+$white: #fff !default;
+$yellow: #F2BC09 !default;
+$black: #000 !default;
+$black2: #222 !default;
+$gray: #666 !default;
+$gray-second: #888 !default;
+$bg-color: #EFF6FD !default;
+// site color
+$primary: #106BB8;
+$secondary: #87B4DB;
+
+
+
+// category
+
+$border-gray: #DDD;
+$border-list: #DBDBDB;
+$border-light: #F0F0F0;
+
+$font-color: $black;
+
+
+// font settings
+$fs-base: 1.6rem !default;
+$fs-xxl: 3rem !default;
+$fs-xl: 2.4rem !default;
+$fs-lg: 2rem !default;
+$fs-sm: 1.4rem !default;
+$fs-xs: 1.2rem !default;
+
+$lh-base: 1.7 !default;
+$lh-lg: 2 !default;
+$lh-sm: 1.5 !default;
+
+$fs-h2: $fs-xxl;
+$lh-h2: 1.4 !default;
+$fs-h3: $fs-xl;
+$lh-h3: 1.45 !default;
+$fs-h4: $fs-lg;
+$lh-h4: $lh-sm;
+$fs-h5: $fs-base;
+$lh-h5: $lh-sm;
+$fs-h6: $fs-sm;
+$lh-h6: $lh-sm;
+
+$fw-thin: 100 !default;
+$fw-extra-light: 200 !default;
+$fw-light: 300 !default;
+$fw-regular: 400 !default;
+$fw-medium: 500 !default;
+$fw-semi-bold: 600 !default;
+$fw-bold: 700 !default;
+$fw-black: 900 !default;
+
+// font family settings
+$font-family-sans:'Noto Sans CJK JP', 'Noto Sans JP', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif !default;
+$font-family-Open-sans: "Open Sans", sans-serif !default;
+
+$font-family-en: 'Bodoni Moda', sans-serif !default;
+$font-family-italic: 'Montserrat', sans-serif !default;
+$font-family-icon: 'handai-icon' !default;
+
+// other
+$box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+$box-shadow2: 0px 0px 10px rgba(0, 0, 0, 0.4);
+$min-width: 1040px;
+
+//
+// Mixins
+// --------------------------------------------------
+// Media queries breakpoints
+$breakpoints: (
+  'xxs': 'screen and (max-width: 374px)',
+  'xxs-min': 'screen and (min-width: 375px)',
+  'xs': 'screen and (max-width: 480px)',
+  'xs-min': 'screen and (min-width: 481px)',
+  'sm': 'screen and (max-width: 575px)',
+  'sm-min': 'screen and (min-width: 576px)',
+  'md': 'screen and (max-width: 767px)',
+  'md-min': 'screen and (min-width: 768px)',
+  'ipad': 'screen and (max-width: 768px)',
+  'ipad-min': 'screen and (min-width: 769px)',
+  'lg': 'screen and (max-width: 991px)',
+  'lg-min': 'screen and (min-width: 992px)',
+  'pc': 'screen and (max-width: 1039px)',
+  'pc-min': 'screen and (min-width: 1040px)',
+  'xl': 'screen and (max-width: 1239px)',
+  'xl-min': 'screen and (min-width: 1240px)',
+  'l-pc': 'screen and (max-width: 1239px)',
+  'l-pc-min': 'screen and (min-width: 1240px)',
+  'course': 'screen and (max-width: 1500px)',
+  'xxl': 'screen and (max-width: 1439px)',
+  'xxl-min': 'screen and (min-width: 1440px)',
+  'desktop-min': 'screen and (min-width: 1600px)',
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// ie css
+@mixin ie() {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+// placeholder font effect settings
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &:placeholder-shown {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Better Font Rendering ===========
+@mixin fontSmooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//
+// layout
+//
+@mixin sidePD($w: 0) {
+  padding-left: $w;
+  padding-right: $w;
+}
+
+@mixin verticalPD($w: 0) {
+  padding-top: $w;
+  padding-bottom: $w;
+}
+
+
+@mixin sideMG($w: 0) {
+  margin-left: $w;
+  margin-right: $w;
+}
+
+@mixin contentCenter($w: 0) {
+  max-width: $w;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+//
+// flex
+//
+@mixin flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin iflex {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+@mixin flexAuto($max: 100%) {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: $max;
+}
+
+@mixin flexChild($w: 100%) {
+  flex: 0 0 $w;
+  max-width: $w;
+}
+
+@mixin flexCalc($w: 0) {
+  flex: 0 0 calc(100% - #{$w});
+  flex-basis: calc(100% - #{$w});
+  max-width: calc(100% - #{$w});
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexChildCustom($expression) {
+  flex: 0 0 $expression;
+  max-width: $expression;
+}
+
+@mixin flexCalcCustom($expression) {
+  flex: 0 0 calc($expression);
+  flex-basis: calc($expression);
+  max-width: calc($expression);
+}
+
+@mixin ahover {
+  @include mq(ipad-min) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// sort media query output
+body {
+  @include mq(xs-min) {
+    margin: 0;
+  }
+  @include mq(sm-min) {
+    margin: 0;
+  }
+  @include mq(md-min) {
+    margin: 0;
+  }
+  @include mq(ipad-min) {
+    margin: 0;
+  }
+  @include mq(lg-min) {
+    margin: 0;
+  }
+  @include mq(pc-min) {
+    margin: 0;
+  }
+  @include mq(xl-min) {
+    margin: 0;
+  }
+  @include mq(l-pc-min) {
+    margin: 0;
+  }
+  @include mq(xxl-min) {
+    margin: 0;
+  }
+  @include mq(xxl) {
+    margin: 0;
+  }
+  @include mq(l-pc) {
+    margin: 0;
+  }
+  @include mq(xl) {
+    margin: 0;
+  }
+  @include mq(pc) {
+    margin: 0;
+  }
+  @include mq(lg) {
+    margin: 0;
+  }
+  @include mq(ipad) {
+    margin: 0;
+  }
+  @include mq(md) {
+    margin: 0;
+  }
+  @include mq(sm) {
+    margin: 0;
+  }
+  @include mq(xs) {
+    margin: 0;
+  }
+}
+
+

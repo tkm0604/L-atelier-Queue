@@ -1,0 +1,405 @@
+html {
+    font-size: 62.5%;
+    font-family: $font-family-sans;
+}
+
+body{
+    min-width: 1240px;
+    @include mq (md){
+        min-width: auto;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease-in;
+  }
+  
+  a:hover{
+    opacity: 0.7;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+.contact-btn__link {
+    background: $yellow;
+    border-radius: 100px;
+    color: $black;
+    padding: 12px 0;
+    display: block;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease-in;
+
+    img {
+        transition: all 0.3s  ease-in;
+    }
+    &:hover {
+        background: $primary;
+        color: #fff;
+    opacity: 1;
+        img {
+            filter: invert(1) brightness(2);
+        }
+    }
+}
+
+
+
+.gotop {
+    right: 0px;
+    position: fixed;
+    bottom: 0px;
+    width: 80px;
+    height: 80px;
+    background: $primary;
+    z-index: 99999;
+    @include mq(md){
+        bottom: 60px;
+        width: 68px;
+        height: 68px;
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: #007BFF;
+        /* 例として青色を使用 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s all ease-in;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding-top: 20px;
+        @include mq(md){
+            font-size: 1.3rem;
+        }
+    }
+
+    .dli-arrow-up {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        line-height: 1;
+        position: absolute;
+        width: 0.1em;
+        height: 0.9em;
+        background: currentColor;
+        top: 24px;
+        @include mq(md){
+            top: 11px;
+        }
+    }
+
+    .dli-arrow-up::before {
+        content: '';
+        width: 0.65em;
+        height: 0.65em;
+        border: 2px solid currentColor;
+        border-left: 0;
+        border-bottom: 0;
+        transform: rotate(-45deg);
+        transform-origin: top right;
+        position: absolute;
+        top: -0.05em;
+        right: 50%;
+        box-sizing: border-box;
+    }
+}
+
+main{
+    padding-top: 88px;
+    @include mq(md){
+       padding-top: 60px;
+    }
+}
+
+.section-ttl{
+    font-size: 4.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing:  0.05em;
+    @include mq (md){
+        font-size: 3.3rem;
+    }
+    span{
+        font-family: $font-family-Open-sans;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1;
+        position: relative;
+        display: block;
+        padding-left: 15px;
+        @include mq (md){
+            font-size: 1.2rem;
+        }
+    }
+    span::before{
+        content: "";
+        position: absolute;
+        background-color: $primary;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+
+.page-ttl{
+    font-size: 4.6rem;
+    font-weight: 600;
+    color: $black2;
+    padding: 50px 0 52px;
+    @include mq(md){
+        font-size: 2.8rem;
+        margin-left: 20px;
+    }
+    span{
+        color: $secondary;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        position: relative;
+        display: block;
+        padding-left: 1em;
+        margin-bottom: 7px;
+        @include mq(md){
+            font-size: 1.4rem;
+            margin-bottom: 9px;
+        }
+        &:after{
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: $primary;
+            @include mq(md){
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+}
+
+/*------------------------------------------
+パンクズ
+-------------------------------------------*/
+.pageGuide{
+    // max-width: 1280px;
+    max-width: 1320px;
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    .breadcrumbs{
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        font-size: 1.2rem;
+        @include mq(md){
+            font-size: 1.0rem;
+        }
+        .separator{
+            position: relative;
+            margin: 0 10px;
+            &::before{
+                position: absolute;
+                content: "";
+                background-color: $primary; 
+                width: 10px;
+                height: 1px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%); 
+            }
+        }
+
+        .active{
+            color: $secondary;
+        }
+    }
+}
+
+/*------------------------------------------
+下層ページ　MV
+-------------------------------------------*/
+.subpage{
+    .mv{
+        background-image: url("../img/page-tittle-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+
+        &__inner{
+         width: 1200px;
+         height: 200px;
+         margin: 0 auto;
+         @include mq(md){
+             width: 100%;
+         }
+        }
+        @include mq(md){
+         height: 170px;
+        }
+     }
+}
+
+
+/*------------------------------------------
+フェードイン
+-------------------------------------------*/
+.fade-in-item,.fade-in-item2,.fade-in-item3 {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.fade-in-up {
+    opacity: 1;
+}
+
+
+/*------------------------------------------
+フェードアップ
+-------------------------------------------*/
+.fade-up-item,.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(50px); /* 初期位置を下に設定 */
+    transition: opacity 1s, transform 0.8s ease-in; /* アニメーションの設定 */
+}
+
+.fade-up {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+
+
+/*------------------------------------------
+お知らせ一覧
+-------------------------------------------*/
+
+.news-list {
+    &__item {
+        border-bottom: 1px solid $border-list;
+        margin-top: 30px;
+
+        @include mq(md) {
+            padding-right: 23px;
+            margin-top: 16px;
+        }
+
+        &:first-of-type {
+            margin-top: 0px;
+        }
+
+        a {
+            width: 100%;
+            font-size: 1.6rem;
+            display: inline-block;
+            padding-bottom: 33px;
+            padding-right: 5px;
+            position: relative;
+            transition: 0.3s all ease-in;
+
+            @include mq(md) {
+                font-size: 1.4rem;
+                line-height: 1.57;
+                padding-bottom: 27px;
+            }
+
+            span {
+                color: $secondary;
+                font-size: 1.3rem;
+                font-weight: 600;
+                display: block;
+                margin-bottom: 11px;
+
+                @include mq(md) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-image: url("../img/arrow-right-m.svg");
+                background-repeat: no-repeat;
+                top: 24px;
+                right: 35px;
+                width: 20px;
+                height: 18px;
+                transition: 0.3s all ease-in;
+
+                @include mq(md) {
+                    top: 42%;
+                    transform: translateY(-50%);
+                    right: -27px;
+                }
+            }
+
+            &:hover {
+                // background: $primary;
+                color: $primary;
+
+                &::before {
+                    right: 25px;
+
+                    @include mq(md) {
+                        right: -27px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*------------------------------------------
+無限スクロール
+-------------------------------------------*/
+.pc-only{
+    display: block;
+    @include mq(md){
+        display: none;
+    }
+}
+
+.sp-only{
+    display: none;
+    @include mq(md){
+        display: block;
+    }
+}
+
+/*------------------------------------------
+無限スクロール
+-------------------------------------------*/
+
+@keyframes infinity-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
