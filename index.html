@@ -26,15 +26,29 @@
             </h1>
             <div class="header-top__right">
                 <p>“Queue(クー)”は、フランス語で「しっぽ」の意味です。<br>
-                    猫にも人にも心地好いをモットーに、猫おもちゃ、雑貨<br>
+                    猫にも人にも心地好いをモットーに、猫おもちゃ、雑貨<br class="pc-only">
                     を作っています。</p>
             </div>
         </div>
-        <div class="header-img">
-            <!-- <img src="/assets/img/common/bg_top_header.jpg" alt=""> -->
-        </div>
-        <nav class="g-nav">
+        <!-- ループで流れるアニメーション表示用のDiv class="header-img" -->
+        <div class="header-img"></div>
+        <!-- ハンバーガーボタン -->
+        <button id="hamburger" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>MENU</p>
+        </button>
+        <nav id="hamburger" class="g-nav">
+            <img class="hamburger__logo" src="/assets/img/common/sp_hamburger_logo.svg" alt="">
+
             <ul class="g-nav__list">
+                <li class="g-nav__item">
+                    <a class="g-nav__link" href="">
+                        <img src="assets/img/common/nikukyu.svg" alt="">
+                        TOPページ
+                    </a>
+                </li>
                 <li class="g-nav__item">
                     <a class="g-nav__link" href="">
                         <img src="assets/img/common/nikukyu.svg" alt="">
@@ -66,12 +80,13 @@
         </nav>
     </header>
     <main>
-        <div class="gotop show" id="goTop">
+        <img src="assets/img/common/logo_top_header.png" alt="" style="height: 1000px;">
+        <!-- <div class="gotop show" id="goTop">
             <a href="#">
                 <img src="assets/img/common/btn-nikukyu.svg" alt="">
                 PAGE TOP
             </a>
-        </div>
+        </div> -->
     </main>
     <footer>
         <div class="footer-inner">

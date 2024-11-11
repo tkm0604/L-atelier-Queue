@@ -1,12 +1,23 @@
+// header{
+//     @include mq(md){
+//         padding:  0 20px;
+//     }
+// }
 .header-top {
     max-width: 1080px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-
+    @include mq(md){
+        flex-direction: column;
+        padding:  0 20px;
+    }
     &__left {
         width: 424px;
+        @include mq(md){
+            width: 89.5vw;
+        }
     }
 
     &__right {
@@ -20,6 +31,9 @@
             color: $primary;
             font-size: 2rem;
             line-height: 1.8;
+            @include mq(md){
+                font-size: 1.6rem;
+            }
         }
     }
 }
@@ -33,6 +47,21 @@
     background-size: auto 100%;
     overflow: hidden;
     animation: slide-background 20s linear infinite;
+    
+    @include mq(md){
+        animation: slide-background 120s linear infinite;
+        margin: 30px 0 0;
+        position: relative;
+    }
+    &::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        background: $secondary;
+        height: 30px;
+        width: 100%;
+    }
 }
 
 @keyframes slide-background {
@@ -44,8 +73,76 @@
     }
 }
 
+.hamburger{
+    display: none;
+    position: relative;
+    margin-left: auto;
+    margin-top: -50px;
+    
+    @include mq(md){
+        display: block;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        color: #fff;
+        background: $primary;
+        z-index: 9999999;
+        position: fixed;
+        bottom: 30px;
+        right: 10px;
+    }
+    span{
+        color: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 30px;
+        height: 1px;
+        background: #fff;
+        transition: all 0.3s;
+    }
+    span:nth-of-type(1){
+        top: 15px;
+    }
+    span:nth-of-type(2){
+        top: 25px;
+    }
+    span:nth-of-type(3){
+        top: 35px;
+    }
+    p{
+        bottom: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    &__logo{
+        display: none;
+        @include mq(md){
+            margin: 0 auto;
+            display: block;
+            width: 76px;
+            height: 103px;
+            text-align: center;
+        }
+    }
+}
+
 .g-nav {
     background: $secondary;
+    @include mq(md){
+        position: fixed;
+        top: -100%; 
+        transition: top 0.3s ease;
+        height: 100dvh;
+        width: 100%;
+        z-index: 999999;
+        padding: 23px 20px;
+        }
     &__list{
         max-width: 930px;
         width: 100%;
@@ -53,17 +150,87 @@
         justify-content: space-between;
         margin: 0 auto;
         padding: 28px 0 24px;
+        @include mq(md){
 
+            flex-direction: column;
+        }
     }
     &__item{
+        &:nth-of-type(1){
+            display: none;
+            @include mq(md){
+                display: block;
+            }
+        }
+        @include mq(md){
+                padding: .3em 0;
+        }
     }
     &__link{
         display: flex;
         font-size: 2rem;
         line-height: 1.4;
         color: $primary;
+        @include mq(md){
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            img{
+                display: none;
+            }
+        }
     }
     &__link:hover{
         opacity: .8;
     }
 }
+
+// ハンバーガーメニュー 開いた時
+.hamburger.is-active{
+    span:nth-of-type(1){
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    span:nth-of-type(2){
+        opacity: 0;
+    }
+    span:nth-of-type(3){
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+}
+.g-nav.is-active{
+    top: 0;
+
+    .g-nav__item + .g-nav__item{
+        border-top: 1px dotted $primary;
+    }
+    .g-nav__item:first-of-type{
+        border-top: 1px dotted $primary;
+        // border-bottom: 1px dotted $primary;
+    }
+    .g-nav__item:last-of-type{
+        border-bottom: 1px dotted $primary;
+    }
+
+    // .g-nav__item{
+    //     padding: .3em 0;
+    // }
+
+    // .g-nav__link{
+    //     display: block;
+    //     width: 100%;
+    //     text-align: center;
+    //     font-size: 1.4rem;
+    // }
+
+    // .g-nav__link img{
+    //     display: none;
+    // }
+}
+
