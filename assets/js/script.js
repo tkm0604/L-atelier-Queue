@@ -26,6 +26,6 @@ $(function(){
 	$('#hamburger').click(function(){
 		$('.g-nav').toggleClass('is-active');
 		$(this).toggleClass('is-active');
-
+		$('body').toggleClass('no-scroll');   // スクロールの禁止/解除
 	});
 });

@@ -4,22 +4,47 @@ footer {
     .footer-inner{
         max-width: 500px;
         width: 100%;
+        text-align: center;
         margin: 0 auto;
         padding: 50px 0;
+        @include mq(md){
+            padding: 50px 20px;
+        }
     }
 
     .footer-nav{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin-top: 19px;
+        @include mq(md){
+            flex-direction: column;
+        }
         &__list{
-
+            padding: 0 .5em; 
+            border-right: 1px solid #ccc; 
+            @include mq(md){
+                padding: .3em 0;
+                border-bottom: 1px dotted #fff;
+                border-right: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+        &__list:first-of-type{
+            @include mq(md){
+                border-top: 1px dotted #fff;
+            }
         }
 
         &__link{
             color: $white;
             font-size: 1.2rem;
             line-height: 2.08;
+            @include mq(md){
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
         }
     }
 
@@ -27,12 +52,32 @@ footer {
         display: flex;
         justify-content: center;
         gap: 10px;
-    margin-top: 15px;
+        margin-top: 15px;
         &__link{
             color: $white;
             font-size: 1.2rem;
             line-height: 2.08;
+            position: relative;
+            // padding: 0 10px;
         }
+        &__list{
+            position: relative;
+            padding: 0 10px; /* 縦線の左右の余白 */
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 1px; /* 縦線の太さ */
+                background-color: #ccc; /* 縦線の色 */
+            }
+        
+            &:last-of-type::after {
+                content: none; /* 最後の要素には縦線を表示しない */
+            }
+        }
+
     }
 
     .copy-rights{
