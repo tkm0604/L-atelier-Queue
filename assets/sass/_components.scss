@@ -1,10 +1,11 @@
 main{
     overflow-x: hidden;
-    
+
 }
 .contents {
-    max-width: 1084px;
+    max-width: 1124px;
     width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -19,6 +20,11 @@ main{
     justify-content: flex-start;
     gap: 30px;
     margin-top: 40px;
+    @include mq(md){
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+    }
 }
 
 .recommend-item {
@@ -27,6 +33,9 @@ main{
     color: $primary;
     transition: all 0.3s;
     border: 1px solid #dddddd;
+    @include mq(md){
+        width: 100%;
+    }
     &__title {
         font-size: 1.8rem;
         font-weight: 700;
@@ -38,6 +47,9 @@ main{
         margin-top: 20px;
         font-size: 1.4rem;
         line-height: 1.5;
+        @include mq(md){
+            font-size: 1.8rem;
+        }
     }
     &__price {
         font-size: 1.6rem;

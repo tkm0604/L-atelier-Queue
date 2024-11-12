@@ -18,6 +18,9 @@
         @include mq(md){
             width: 89.5vw;
         }
+        img{
+            width: 100%;
+        }
     }
 
     &__right {
