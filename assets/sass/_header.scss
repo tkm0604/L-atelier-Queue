@@ -113,13 +113,17 @@
     span:nth-of-type(3){
         top: 35px;
     }
-    p{
+
+    &__txt{
         bottom: 10px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         font-size: 1.2rem;
         font-weight: 700;
+        background: none !important;
+        height: auto !important;
+        width: auto !important;
     }
 
     &__logo{

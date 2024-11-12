@@ -148,8 +148,8 @@ img {
 }
 
 .gotop {
-  right: 0px;
-  position: fixed;
+  margin-left: auto;
+  margin-bottom: -15px;
   width: 80px;
   height: 80px;
   background: #341E12;
@@ -813,13 +813,16 @@ address {
 .hamburger span:nth-of-type(3) {
   top: 35px;
 }
-.hamburger p {
+.hamburger__txt {
   bottom: 10px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
   font-weight: 700;
+  background: none !important;
+  height: auto !important;
+  width: auto !important;
 }
 .hamburger__logo {
   display: none;
@@ -1191,6 +1194,10 @@ footer .copy-rights {
   width: 80px;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 .contents {
   max-width: 1084px;
   width: 100%;
@@ -1198,7 +1205,7 @@ footer .copy-rights {
 }
 
 .new-item {
-  background: #F7320E !important;
+  background: #f7320e !important;
   color: #fff !important;
   font-weight: 700;
 }
@@ -1215,7 +1222,7 @@ footer .copy-rights {
   padding: 20px 15px;
   color: #341E12;
   transition: all 0.3s;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 .recommend-item__title {
   font-size: 1.8rem;
@@ -1253,9 +1260,10 @@ footer .copy-rights {
   font-weight: 700;
   width: 100%;
   position: relative;
+  text-align: center;
 }
 .recommend-item__btn-txt:hover {
-  border: 1px solid #A88E25;
+  border: 1px solid #a88e25;
   background: #F5EFD7;
   opacity: 1;
 }
